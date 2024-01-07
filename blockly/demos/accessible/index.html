@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Blockly Accesible</title>
+
+  <script src="../../accessible/libs/es6-shim.min.js"></script>
+  <script src="../../accessible/libs/angular2-polyfills.min.js"></script>
+  <script src="../../accessible/libs/Rx.umd.min.js"></script>
+  <script src="../../accessible/libs/angular2-all.umd.min.js"></script>
+
+  <!-- Load accessibleBlockly -->
+  <!-- <script src="../../blockly_accessible_compressed.js"></script> -->
+  <script src="../../blockly_accessible_uncompressed.js"></script>
+
+  <!-- Load Blockly -->
+  <!-- <script src="../../msg/js/en.js"></script> -->
+  <script src="../../msg/js/es.js"></script>
+
+  <script src="../../accessible/messages.js"></script>
+  <script src="../../blocks_compressed.js"></script>
+  <script src="../../javascript_compressed.js"></script>
+  <script src="../../python_compressed.js"></script>
+
+  <script src="../../accessible/key-combination.js"></script>
+
+  <link rel="stylesheet" href="../../accessible/media/accessible.css">
+</head>
+<body>
+  <p style="font-size: 20px; font-weight: bold;">
+    Bienvenido a Blockly Accesible
+  </p>
+  <p>
+    Este programa, que corre en el navegador web, permite crear programas sin escribir código.
+  </p>
+  <p>
+    Blockly Accesible esta diseñado para lectores de pantalla, optimizada para el lector NVDA y probada en el navegador Google Chrome, 
+    que utiliza de base el programa Blockly creado por Google y MIT. 
+    Esto permite a los usuarios con discapacidad visual crear programas utilizando el teclado.
+  </p>
+  <p>
+    Los programas se crean dentro del espacio de trabajo utilizando bloques de código.
+  </p>
+  <p>
+    Para utilizar Blockly Accesible es necesario conocer las siguientes instrucciones:
+    <ol>
+      <li>Utiliza Tab para navegar entre botones hacia adelante, y Shift + Tab para volver atrás.</li>
+      <li>Para explorar el espacio de trabajo utiliza las flechas.</li>
+      <li>Las instrucciones, la traducción a código y la ejecución del código aparecerán en una nueva ventana del navegador.</li>
+      <li>Existen atajos de teclado para facilitar el uso del programa, por ejemplo: Control + Espacio para ejecutar el código.</li>
+    </ol>
+  </p>
+  <p>
+    Si es su primera vez utilizando el programa, te recomiendo realizar el tutorial:
+    <button onclick="location.href='./tutorial/seleccion_tutorial.html'">Tutorial Blockly Accesible</button>
+  </p>
+  <p>
+    Si tienes alguna duda o sugerencia puedes contactarme a través del siguiente botón:
+    <button onclick="location.href='./contacto.html'">Contáctame</button>
+  </p>
+  <blockly-app></blockly-app>
+  <script>
+    const ACCESSIBLE_GLOBALS = {
+      // Prefix of path to sound files.
+      mediaPathPrefix: '../../accessible/media/',
+      // Additional buttons for the sidebar.
+      customSidebarButtons: []
+    };
+    document.addEventListener('DOMContentLoaded', function() {
+      ng.platform.browser.bootstrap(blocklyApp.AppComponent);
+    });
+  </script>
+  <xml id="blockly-toolbox-xml" style="display: none">
+
+    <category name="Texto" colour="160">
+      <block type="text_print"></block>
+      <block type="text_print">
+        <value name="TEXT">
+          <block type="text">
+            <field name="TEXT">abc</field>
+          </block>
+        </value>
+      </block>
+      <block type="text">
+        <block type="text">
+          <field name="TEXT">abc</field>
+        </block>
+      </block>
+      <block type="text_reverse">
+        <value name="TEXT">
+          <block type="text">
+            <field name="TEXT">abc</field>
+          </block>
+        </value>
+      </block>
+      <block type="text_length">
+        <value name="VALUE">
+          <block type="text">
+            <field name="TEXT">abc</field>
+          </block>
+        </value>
+      </block>
+      <block type="text_join"></block>
+      <block type="text_isEmpty">
+        <value name="VALUE">
+          <block type="text">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+      </block>
+      <block type="text_count">
+        <value name="SUB">
+          <block type="text">
+            <field name="TEXT">programa</field>
+          </block>
+        </value>
+        <value name="TEXT">
+          <block type="text">
+            <field name="TEXT">programación</field>
+          </block>
+        </value>
+      </block>
+      <block type="text_replace">
+        <value name="FROM">
+          <block type="text">
+            <field name="TEXT">texto1</field>
+          </block>
+        </value>
+        <value name="TO">
+          <block type="text">
+            <field name="TEXT">texto2</field>
+          </block>
+        </value>
+        <value name="TEXT">
+          <block type="text">
+            <field name="TEXT">texto3</field>
+          </block>
+        </value>
+      </block>
+    </category>
+
+    <category name="Matemáticas" colour="230">
+      <block type="math_number" gap="32">
+        <field name="NUM">123</field>
+      </block>
+      <block type="math_arithmetic">
+        <value name="A">
+          <block type="math_number">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+        <value name="B">
+          <block type="math_number">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+      </block>
+      <block type="math_trig">
+        <value name="NUM">
+          <block type="math_number">
+            <field name="NUM">45</field>
+          </block>
+        </value>
+      </block>
+      <block type="math_constant"></block>
+      <block type="math_number_property">
+        <value name="NUMBER_TO_CHECK">
+          <block type="math_number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+      </block>
+      <block type="math_round">
+        <value name="NUM">
+          <block type="math_number">
+            <field name="NUM">3.1</field>
+          </block>
+        </value>
+      </block>
+      <block type="math_modulo">
+        <value name="DIVIDEND">
+          <block type="math_number">
+            <field name="NUM">64</field>
+          </block>
+        </value>
+        <value name="DIVISOR">
+          <block type="math_number">
+            <field name="NUM">10</field>
+          </block>
+        </value>
+      </block>
+      <block type="math_constrain">
+        <value name="VALUE">
+          <block type="math_number">
+            <field name="NUM">50</field>
+          </block>
+        </value>
+        <value name="LOW">
+          <block type="math_number">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+        <value name="HIGH">
+          <block type="math_number">
+            <field name="NUM">100</field>
+          </block>
+        </value>
+      </block>
+      <block type="math_random_int">
+        <value name="FROM">
+          <block type="math_number">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+        <value name="TO">
+          <block type="math_number">
+            <field name="NUM">100</field>
+          </block>
+        </value>
+      </block>
+      <block type="math_random_float"></block>
+    </category>
+    
+    <category name="Lógica" colour="210">
+      <block type="controls_if"></block>
+      <block type="logic_boolean"></block>
+      <block type="logic_compare"></block>
+      <block type="logic_negate"></block>
+      <block type="logic_operation"></block>
+    </category>
+
+    <category name="Variables" colour="330" custom="VARIABLE"></category>
+
+    <category name="Ciclos" colour="120">
+      <block type="controls_repeat_ext">
+        <value name="TIMES">
+          <block type="math_number">
+            <field name="NUM">10</field>
+          </block>
+        </value>
+      </block>
+      <block type="controls_whileUntil"></block>
+      <block type="controls_for">
+        <value name="FROM">
+          <block type="math_number">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+        <value name="TO">
+          <block type="math_number">
+            <field name="NUM">10</field>
+          </block>
+        </value>
+        <value name="BY">
+          <block type="math_number">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+      </block>
+      <block type="controls_flow_statements"></block>
+    </category>
+
+  </xml>
+</body>
+</html>

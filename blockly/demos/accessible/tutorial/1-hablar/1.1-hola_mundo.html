@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Tutorial Blockly</title>
+
+  <script src="../../../../accessible/libs/es6-shim.min.js"></script>
+  <script src="../../../../accessible/libs/angular2-polyfills.min.js"></script>
+  <script src="../../../../accessible/libs/Rx.umd.min.js"></script>
+  <script src="../../../../accessible/libs/angular2-all.umd.min.js"></script>
+
+  <!-- Load accessibleBlockly -->
+  <!-- <script src="../../blockly_accessible_compressed.js"></script> -->
+  <script src="../../../../blockly_accessible_uncompressed.js"></script>
+
+  <!-- Load Blockly -->
+  <!-- <script src="../../msg/js/en.js"></script> -->
+  <script src="../../../../msg/js/es.js"></script>
+
+ 
+  <script src="../../../../accessible/messages.js"></script>
+  <script src="../../../../blocks_compressed.js"></script>
+  <script src="../../../../javascript_compressed.js"></script>
+  <script src="../../../../python_compressed.js"></script>
+
+
+  <link rel="stylesheet" href="../../../../accessible/media/accessible.css">
+</head>
+<body>
+  <p style="font-size: 20px; font-weight: bold;">
+    Tutorial 1.1: Hola Mundo
+  </p>
+  <div style="display: table-cell;">
+    <div style="height: 50px; width: 400px; display: flex;">
+      <button id="home">Volver al inicio</button>
+      <button id="selection">Volver a la selección de tutoriales</button>
+      <button id="next_tutorial">Siguiente tutorial</button>
+      <button id="manualBtn">Manual de uso de Blockly</button>
+      <button id="tutorialBtn">Instrucciones tutorial (Control + i)</button>
+    </div>
+  </div>
+  <br>
+  <div id="instructionsTutorial" hidden>
+    <p style="font-size: 24px; font-weight: bold;">¡Bienvenido al tutorial 1.1 de Accessible Blockly!</p>
+    <p>
+      Esta es una nueva ventana del navegador, si quieres cambiar de ventana puedes presionar Alt + Tab, y si quieres cerrar esta ventana puedes presionar Control + W.
+      <br><br>
+      Este y los siguientes tutoriales están diseñados para realizarse con una persona vidente que te guíe, por lo que te recomendamos que lo hagas con un amigo o familiar.
+      <br><br>
+      Si estás aquí es porque quieres adentrarte en el mundo de la programación, el cual puede ser muy amplio y complejo, por lo que en estos tutoriales
+      aprenderemos los conceptos básicos de la programación y así podrás entenderlo todo paso a paso y divertirte en el camino.
+      <br><br>
+      Ten en cuenta que los tutoriales están conformados por una serie de pasos que deben realizarse en la ventana anterior llamada "Tutorial Blockly", por lo que te recomendamos que
+      tengas ambas ventanas abiertas para que puedas seguir las instrucciones.
+      <br><br>
+      Así que empezaremos creando un programa que diga un mensaje en la pantalla, por lo que debes seguir los siguientes pasos:
+    </p>
+    <ol>
+      <li>Primero debemos crear el grupo de bloques para que diga lo que nosotros queramos, para ello debemos presionar el botón: 
+        "Crear nuevo grupo de bloques", y luego con Tab seleccionar el botón: "decir abc" y presionar Enter.</li>
+      <img src="../../gifs/tutorial1.1-1.gif" alt="Este es un video para el guía.">
+      <li>Ahora tenemos que movernos dentro del bloque para modificar su contenido. 
+        Esto lo hacemos ingresando al bloque que acabamos de colocar. Esto lo hacemos presionando la flecha a la derecha en el teclado, y para salir presionamos la flecha a la izquierda.
+        Una vez dentro del bloque, podemos movernos entre los bloques internos "decir" y "abc" presionando la flecha de arriba y abajo.
+        Ten en cuenta que existen bloques que no tienen bloques internos, por lo que no podrás ingresar a ellos, en nuestro caso el bloque "decir" no tiene bloques internos.</li>
+      <li>Ahora solo nos queda modificar el contenido del texto que queremos que diga nuestro programa.
+        Para ello debemos ingresar con la flecha derecha al bloque interno "abc", y luego presionar Enter para ingresar al modo de edición de texto y escribir lo que queramos y presionar Enter para salir.</li>
+      <img src="../../gifs/tutorial1.1-2.gif" alt="Este es un video para el guía.">
+      <li>Ahora que terminamos de modificar el contenido, podemos escuchar cómo sería la traducción de nuestro programa en el lenguaje <a aria-label="Paiton"><a aria-hidden="true">Python</a></a> o <a aria-label="YavaScript"><a aria-hidden="true">JavaScript</a></a> presionando el botón: 
+         "Mostrar código <a aria-label="Paiton"><a aria-hidden="true">Python</a></a>" o "Mostrar código <a aria-label="YavaScript"><a aria-hidden="true">JavaScript</a></a>"fuera del espacio de trabajo. Este botón lo seleccionamos con el Tab o Shift + Tab.</li>
+      <img src="../../gifs/tutorial1.1-3.gif" alt="Este es un video para el guía.">
+      <li>Finalmente, podemos presionar el botón: "Ejecutar código" para escuchar el resultado de nuestro programa.</li>
+      <img src="../../gifs/tutorial1.1-4.gif" alt="Este es un video para el guía.">
+      <li>¡Felicidades! Has creado tu primer programa. Puede que no haya sido muy divertido, pero créeme que esto es solo el inicio, presiona el botón: "Siguiente tutorial", para aprender más.
+        Pero antes no te olvides de cerrar esta ventana presionando Control + W.</li>
+      </li>
+    </ol>
+  </div>
+  <blockly-app></blockly-app>
+  <script src="../../../../accessible/key-combination.js"></script>
+  <script src="../../../../accessible/tutorial.js"></script>
+  <script>
+    const next_tutorial = document.getElementById("next_tutorial");
+    next_tutorial.onclick = function() {
+      window.location.href = "./1.2-reves.html";
+    }
+    const ACCESSIBLE_GLOBALS = {
+      // Prefix of path to sound files.
+      mediaPathPrefix: '../../../../accessible/media/',
+      // Additional buttons for the sidebar.
+      customSidebarButtons: []
+    };
+    document.addEventListener('DOMContentLoaded', function() {
+      ng.platform.browser.bootstrap(blocklyApp.AppComponent);
+    });
+  </script>
+  
+  <xml id="blockly-toolbox-xml" style="display: none">
+    <category name="Texto" colour="160">
+      <block type="text_print">
+        <value name="TEXT">
+          <block type="text">
+            <field name="TEXT">abc</field>
+          </block>
+        </value>
+      </block>
+    </category>
+  </xml>
+</body>
+</html>

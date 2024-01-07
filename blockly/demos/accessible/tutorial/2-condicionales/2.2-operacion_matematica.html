@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Tutorial Blockly</title>
+
+  <script src="../../../../accessible/libs/es6-shim.min.js"></script>
+  <script src="../../../../accessible/libs/angular2-polyfills.min.js"></script>
+  <script src="../../../../accessible/libs/Rx.umd.min.js"></script>
+  <script src="../../../../accessible/libs/angular2-all.umd.min.js"></script>
+
+  <!-- Load accessibleBlockly -->
+  <!-- <script src="../../blockly_accessible_compressed.js"></script> -->
+  <script src="../../../../blockly_accessible_uncompressed.js"></script>
+
+  <!-- Load Blockly -->
+  <!-- <script src="../../msg/js/en.js"></script> -->
+  <script src="../../../../msg/js/es.js"></script>
+
+ 
+  <script src="../../../../accessible/messages.js"></script>
+  <script src="../../../../blocks_compressed.js"></script>
+  <script src="../../../../javascript_compressed.js"></script>
+  <script src="../../../../python_compressed.js"></script>
+
+
+  <link rel="stylesheet" href="../../../../accessible/media/accessible.css">
+</head>
+<body>
+  <p style="font-size: 20px; font-weight: bold;">
+    Tutorial 2.2: Operación Matemática
+  </p>
+  <div style="display: table-cell;">
+    <div style="height: 50px; width: 450px; display: flex;">
+      <button id="home">Volver al inicio</button>
+      <button id="selection">Volver a la selección de tutoriales</button>
+      <button id="previous_tutorial">Tutorial anterior</button>
+      <button id="next_tutorial">Siguiente tutorial</button>
+      <button id="manualBtn">Manual de uso de Blockly</button>
+      <button id="tutorialBtn">Instrucciones tutorial (Control + i)</button>
+    </div>
+  </div>
+  <br>
+  <div id="instructionsTutorial" hidden>
+    <p style="font-size: 24px; font-weight: bold;">¡Bienvenido al tutorial 2.2 de Accessible Blockly!</p>
+    <p>
+      Esta es una nueva ventana del navegador, si quieres cambiar de ventana puedes presionar Alt + Tab, y si quieres cerrar esta ventana puedes presionar Control + W.
+      <br><br>
+      Recuerda que los pasos deben realizarse en la ventana anterior llamada "Tutorial Blockly", por lo que te recomendamos que tengas ambas ventanas 
+      abiertas para que puedas seguir las instrucciones.
+      <br><br>
+      En el tutorial anterior aprendimos a crear un programa que decía un texto de manera condicionada por un bloque de lógica "verdadero" o "falso".
+      Ahora también utilizaremos una condición, pero ligada a una operación matemática. Por lo que debemos seguir los siguientes pasos:
+    </p>
+    <ol>
+      <li>Al igual que en el tutorial anterior, debemos crear el bloque de lógica llamado "si EN BLANCO hacer EN BLANCO".</li>
+      <li>Luego, a la primera parte del bloque de lógica, le agregamos un bloque de lógica llamado "EN BLANCO = EN BLANCO".
+        Quedando como bloque final "si EN BLANCO = EN BLANCO hacer EN BLANCO".</li>
+      <li>En el primer espacio en blanco del bloque de lógica, agregamos el bloque de matemáticas de suma "1 + 1" y lo modificamos por los valores que queramos, por ejemplo "123 + 456".
+        Quedando como bloque final "si 123 + 456 = EN BLANCO hacer EN BLANCO".</li>
+      <li>En el segundo espacio en blanco del bloque de lógica, agregamos el bloque de matemáticas de número "123", el cual será la respuesta de la suma anterior y también podemos modificar, por ejemplo "579".
+        Quedando como bloque final "si 123 + 456 = 579 hacer EN BLANCO".</li>
+      <li>En el último espacio en blanco del bloque de lógica, agregamos el bloque de texto "decir 'abc'" y lo modificamos por la frase que queramos, por ejemplo "decir 'la suma es correcta'".
+        Quedando como bloque final "si 123 + 456 = 579 hacer decir 'la suma es correcta'".</li>
+      <li>Finalmente ejecutamos el código para escuchar el resultado. Este dirá la frase que escribimos en el bloque de texto solo si la suma es correcta.
+        Por último, recuerda que también puedes escuchar como sería nuestro programa en <a aria-label="Paiton"><a aria-hidden="true">Python</a></a> y <a aria-label="YavaScript"><a aria-hidden="true">JavaScript</a></a>.</li>
+      <li>Ahora ya sabes como crear un programa que te diga una frase de manera condicionada por una suma, pero puedes jugar con las diferentes operaciones matemáticas y frases que quieras.
+        En el siguiente tutorial agregaremos un concepto nuevo, por lo que te invitamos a seguir aprendiendo. Pero antes no te olvides de cerrar esta ventana presionando Control + W.</li>
+    </ol>
+  </div>
+
+  <blockly-app></blockly-app>
+  <script src="../../../../accessible/tutorial.js"></script>
+  <script src="../../../../accessible/key-combination.js"></script>
+  <script>
+    const previous_tutorial = document.getElementById("previous_tutorial");
+    const next_tutorial = document.getElementById("next_tutorial");
+    previous_tutorial.onclick = function() {
+      window.location.href = "./2.1-logica.html";
+    }
+    next_tutorial.onclick = function() {
+      window.location.href = "./2.3-propiedad_matematica.html";
+    }
+    const ACCESSIBLE_GLOBALS = {
+      // Prefix of path to sound files.
+      mediaPathPrefix: '../../../../accessible/media/',
+      // Additional buttons for the sidebar.
+      customSidebarButtons: []
+    };
+    document.addEventListener('DOMContentLoaded', function() {
+      ng.platform.browser.bootstrap(blocklyApp.AppComponent);
+    });
+  </script>
+
+  <xml id="blockly-toolbox-xml" style="display: none">
+    
+    <category name="Texto" colour="160">
+      <block type="text_print"></block>
+      <block type="text_print">
+        <value name="TEXT">
+          <block type="text">
+            <field name="TEXT">abc</field>
+          </block>
+        </value>
+      </block>
+      <block type="text">
+        <block type="text">
+          <field name="TEXT">abc</field>
+        </block>
+      </block>
+      <block type="text_reverse">
+        <value name="TEXT">
+          <block type="text">
+            <field name="TEXT">abc</field>
+          </block>
+        </value>
+      </block>
+      <block type="text_length">
+        <value name="VALUE">
+          <block type="text">
+            <field name="TEXT">abc</field>
+          </block>
+        </value>
+      </block>
+      <block type="text_join"></block>
+      <block type="text_isEmpty">
+        <value name="VALUE">
+          <block type="text">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+      </block>
+      <block type="text_count">
+        <value name="SUB">
+          <block type="text">
+            <field name="TEXT">programa</field>
+          </block>
+        </value>
+        <value name="TEXT">
+          <block type="text">
+            <field name="TEXT">programación</field>
+          </block>
+        </value>
+      </block>
+      <block type="text_replace">
+        <value name="FROM">
+          <block type="text">
+            <field name="TEXT">texto1</field>
+          </block>
+        </value>
+        <value name="TO">
+          <block type="text">
+            <field name="TEXT">texto2</field>
+          </block>
+        </value>
+        <value name="TEXT">
+          <block type="text">
+            <field name="TEXT">texto3</field>
+          </block>
+        </value>
+      </block>
+    </category>
+
+    <category name="Matemáticas" colour="230">
+      <block type="math_number" gap="32">
+        <field name="NUM">123</field>
+      </block>
+      <block type="math_arithmetic">
+        <value name="A">
+          <block type="math_number">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+        <value name="B">
+          <block type="math_number">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+      </block>
+      <block type="math_trig">
+        <value name="NUM">
+          <block type="math_number">
+            <field name="NUM">45</field>
+          </block>
+        </value>
+      </block>
+      <block type="math_constant"></block>
+      <block type="math_number_property">
+        <value name="NUMBER_TO_CHECK">
+          <block type="math_number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+      </block>
+      <block type="math_round">
+        <value name="NUM">
+          <block type="math_number">
+            <field name="NUM">3.1</field>
+          </block>
+        </value>
+      </block>
+      <block type="math_modulo">
+        <value name="DIVIDEND">
+          <block type="math_number">
+            <field name="NUM">64</field>
+          </block>
+        </value>
+        <value name="DIVISOR">
+          <block type="math_number">
+            <field name="NUM">10</field>
+          </block>
+        </value>
+      </block>
+      <block type="math_constrain">
+        <value name="VALUE">
+          <block type="math_number">
+            <field name="NUM">50</field>
+          </block>
+        </value>
+        <value name="LOW">
+          <block type="math_number">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+        <value name="HIGH">
+          <block type="math_number">
+            <field name="NUM">100</field>
+          </block>
+        </value>
+      </block>
+      <block type="math_random_int">
+        <value name="FROM">
+          <block type="math_number">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+        <value name="TO">
+          <block type="math_number">
+            <field name="NUM">100</field>
+          </block>
+        </value>
+      </block>
+      <block type="math_random_float"></block>
+    </category>
+    
+    <category name="Lógica" colour="210">
+      <block type="controls_if"></block>
+      <block type="logic_boolean"></block>
+      <block type="logic_compare"></block>
+    </category>
+
+  </xml>
+</body>
+</html>

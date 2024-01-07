@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Tutorial Blockly</title>
+
+  <script src="../../../../accessible/libs/es6-shim.min.js"></script>
+  <script src="../../../../accessible/libs/angular2-polyfills.min.js"></script>
+  <script src="../../../../accessible/libs/Rx.umd.min.js"></script>
+  <script src="../../../../accessible/libs/angular2-all.umd.min.js"></script>
+
+  <!-- Load accessibleBlockly -->
+  <!-- <script src="../../blockly_accessible_compressed.js"></script> -->
+  <script src="../../../../blockly_accessible_uncompressed.js"></script>
+
+  <!-- Load Blockly -->
+  <!-- <script src="../../msg/js/en.js"></script> -->
+  <script src="../../../../msg/js/es.js"></script>
+
+ 
+  <script src="../../../../accessible/messages.js"></script>
+  <script src="../../../../blocks_compressed.js"></script>
+  <script src="../../../../javascript_compressed.js"></script>
+  <script src="../../../../python_compressed.js"></script>
+
+
+  <link rel="stylesheet" href="../../../../accessible/media/accessible.css">
+</head>
+<body>
+  <p style="font-size: 20px; font-weight: bold;">
+    Tutorial 1.4: Aritmética
+  </p>
+  <div style="display: table-cell;">
+    <div style="height: 50px; width: 450px; display: flex;">
+      <button id="home">Volver al inicio</button>
+      <button id="selection">Volver a la selección de tutoriales</button>
+      <button id="previous_tutorial">Tutorial anterior</button>
+      <button id="next_tutorial">Siguiente tutorial</button>
+      <button id="manualBtn">Manual de uso de Blockly</button>
+      <button id="tutorialBtn">Instrucciones tutorial (Control + i)</button>
+    </div>
+  </div>
+  <br>
+  <div id="instructionsTutorial" hidden>
+    <p style="font-size: 24px; font-weight: bold;">¡Bienvenido al tutorial 1.4 de Accessible Blockly!</p>
+    <p>
+      Esta es una nueva ventana del navegador, si quieres cambiar de ventana puedes presionar Alt + Tab, y si quieres cerrar esta ventana puedes presionar Control + W.
+      <br><br>
+      Recuerda que los pasos deben realizarse en la ventana anterior llamada "Tutorial Blockly", por lo que te recomendamos que tengas ambas ventanas 
+      abiertas para que puedas seguir las instrucciones.
+      <br><br>
+      En el tutorial anterior aprendimos a crear un programa que valida si un número es par o impar.     
+      Para este tutorial aprenderemos a realizar operaciones aritméticas con números.
+      <br><br>
+      Esta vez encontrarás solo 2 bloques, uno de texto como en el primer tutorial y otro que ha encapsulado todos los bloques de texto dentro de un bloque de texto vacío
+      del cual podrás encontrar todos los bloques de texto que ya conoces y muchos otros más.
+      <br><br>
+      Para realizar este tutorial, como siempre debemos seguir los siguientes pasos:
+    </p>
+    <ol>
+      <li>Debemos empezar creando un nuevo grupo de bloques y esta vez seleccionamos el único bloque "decir EN BLANCO".</li>
+      <img src="../../gifs/tutorial1.4-1.gif" alt="Este es un video para el guía.">
+      <li>Luego necesitamos agregar un bloque en la parte que dice "EN BLANCO", para esto debemos navegar dentro del bloque hasta encontrar la frase "Se necesita un valor cualquiera: Agregar bloque botón"
+        y presionar Enter para ingresar a una lista con diferentes bloques que podemos agregar. En este caso seleccionaremos el bloque "1 + 1".</li>
+      <img src="../../gifs/tutorial1.4-2.gif" alt="Este es un video para el guía.">
+      <li>Al igual que en el tutorial anterior, debemos modificar los números y la operación que queremos realizar. En este caso, cambiaremos "1 + 1" por "123 x 456".</li>
+      <img src="../../gifs/tutorial1.4-3.gif" alt="Este es un video para el guía.">
+      <li>Finalmente ejecutamos el código presionando Control + Espacio y podremos escuchar el resultado de la operación.</li>
+      <li>Recuerda que puedes explorar las distintas operaciones y probar con diferentes números. Además de poder escuchar el código generado en <a aria-label="Paiton"><a aria-hidden="true">Python</a></a> y <a aria-label="YavaScript"><a aria-hidden="true">JavaScript</a></a> con las teclas Control + F1 y Control + F2 respectivamente.</li>
+      <img src="../../gifs/tutorial1.4-4.gif" alt="Este es un video para el guía.">
+      <img src="../../gifs/tutorial1.4-5.gif" alt="Este es un video para el guía.">
+      <li>Este es el último tutorial de la sección "Hablar", ya que la siguiente sección es una tarea para desafiarte y que debes realizar tú solo. Si quieres volver a los tutoriales, puedes hacerlo desde la ventana "Selección de tutoriales".
+        Pero antes no te olvides de cerrar esta ventana presionando Control + W.</li>
+    </ol>
+  </div>
+
+  <blockly-app></blockly-app>
+  <script src="../../../../accessible/tutorial.js"></script>
+  <script src="../../../../accessible/key-combination.js"></script>
+  <script>
+    const previous_tutorial = document.getElementById("previous_tutorial");
+    const next_tutorial = document.getElementById("next_tutorial");
+    previous_tutorial.onclick = function() {
+      window.location.href = "./1.3-numero_par.html";
+    }
+    next_tutorial.onclick = function() {
+      window.location.href = "./1.5-tarea1.html";
+    }
+    const ACCESSIBLE_GLOBALS = {
+      // Prefix of path to sound files.
+      mediaPathPrefix: '../../../../accessible/media/',
+      // Additional buttons for the sidebar.
+      customSidebarButtons: []
+    };
+    document.addEventListener('DOMContentLoaded', function() {
+      ng.platform.browser.bootstrap(blocklyApp.AppComponent);
+    });
+  </script>
+
+  <xml id="blockly-toolbox-xml" style="display: none">
+
+    <category name="Texto" colour="160">
+      <block type="text_print"></block>
+      <block type="text_print">
+        <value name="TEXT">
+          <block type="text">
+            <field name="TEXT">abc</field>
+          </block>
+        </value>
+      </block>
+      <block type="text">
+        <block type="text">
+          <field name="TEXT">abc</field>
+        </block>
+      </block>
+      <block type="text_reverse">
+        <value name="TEXT">
+          <block type="text">
+            <field name="TEXT">abc</field>
+          </block>
+        </value>
+      </block>
+      <block type="text_length">
+        <value name="VALUE">
+          <block type="text">
+            <field name="TEXT">abc</field>
+          </block>
+        </value>
+      </block>
+      <block type="text_join"></block>
+      <block type="text_isEmpty">
+        <value name="VALUE">
+          <block type="text">
+            <field name="TEXT"></field>
+          </block>
+        </value>
+      </block>
+      <block type="text_count">
+        <value name="SUB">
+          <block type="text">
+            <field name="TEXT">programa</field>
+          </block>
+        </value>
+        <value name="TEXT">
+          <block type="text">
+            <field name="TEXT">programación</field>
+          </block>
+        </value>
+      </block>
+      <block type="text_replace">
+        <value name="FROM">
+          <block type="text">
+            <field name="TEXT">texto1</field>
+          </block>
+        </value>
+        <value name="TO">
+          <block type="text">
+            <field name="TEXT">texto2</field>
+          </block>
+        </value>
+        <value name="TEXT">
+          <block type="text">
+            <field name="TEXT">texto3</field>
+          </block>
+        </value>
+      </block>
+    </category>
+
+    <category name="Matemáticas" colour="230">
+      <block type="math_number" gap="32">
+        <field name="NUM">123</field>
+      </block>
+      <block type="math_arithmetic">
+        <value name="A">
+          <block type="math_number">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+        <value name="B">
+          <block type="math_number">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+      </block>
+      <block type="math_trig">
+        <value name="NUM">
+          <block type="math_number">
+            <field name="NUM">45</field>
+          </block>
+        </value>
+      </block>
+      <block type="math_constant"></block>
+      <block type="math_number_property">
+        <value name="NUMBER_TO_CHECK">
+          <block type="math_number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+      </block>
+      <block type="math_round">
+        <value name="NUM">
+          <block type="math_number">
+            <field name="NUM">3.1</field>
+          </block>
+        </value>
+      </block>
+      <block type="math_modulo">
+        <value name="DIVIDEND">
+          <block type="math_number">
+            <field name="NUM">64</field>
+          </block>
+        </value>
+        <value name="DIVISOR">
+          <block type="math_number">
+            <field name="NUM">10</field>
+          </block>
+        </value>
+      </block>
+      <block type="math_constrain">
+        <value name="VALUE">
+          <block type="math_number">
+            <field name="NUM">50</field>
+          </block>
+        </value>
+        <value name="LOW">
+          <block type="math_number">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+        <value name="HIGH">
+          <block type="math_number">
+            <field name="NUM">100</field>
+          </block>
+        </value>
+      </block>
+      <block type="math_random_int">
+        <value name="FROM">
+          <block type="math_number">
+            <field name="NUM">1</field>
+          </block>
+        </value>
+        <value name="TO">
+          <block type="math_number">
+            <field name="NUM">100</field>
+          </block>
+        </value>
+      </block>
+      <block type="math_random_float"></block>
+    </category>
+  </xml>
+</body>
+</html>

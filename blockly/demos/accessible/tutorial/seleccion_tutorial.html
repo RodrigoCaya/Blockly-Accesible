@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Selección Tutorial Blockly </title>
+    <script src="../../../accessible/libs/es6-shim.min.js"></script>
+    <script src="../../../accessible/libs/angular2-polyfills.min.js"></script>
+    <script src="../../../accessible/libs/Rx.umd.min.js"></script>
+    <script src="../../../accessible/libs/angular2-all.umd.min.js"></script>
+    <script src="../../../blockly_accessible_uncompressed.js"></script>
+    <script src="../../../accessible/key-combination.js"></script>
+    <link rel="stylesheet" href="../../../accessible/media/accessible.css">
+    <style>
+      select {
+        width: 200px; 
+        height: 25px; 
+        margin: 2px; 
+        -moz-box-sizing: border-box; 
+        -webkit-box-sizing: border-box; 
+        box-sizing: border-box; 
+      }
+    </style>
+  </head>
+  <body>
+    <p style="font-size: 20px; font-weight: bold;">
+      Selección Tutorial Blockly
+    </p>
+    <p>
+      <button onclick="location.href='../index.html'" type="button">
+        Volver al inicio
+      </button>
+    </p>
+    Selecciona un tutorial:
+    <p>
+      <select name="tutorial1" id="tutorial1" onchange="location = this.value;">
+        <option value="">Tutorial 1</option>
+        <option value="./1-hablar/1.1-hola_mundo.html">Tutorial 1.1: Hola Mundo</option>
+        <option value="./1-hablar/1.2-reves.html">Tutorial 1.2: Revés</option>
+        <option value="./1-hablar/1.3-numero_par.html">Tutorial 1.3: Número par</option>
+        <option value="./1-hablar/1.4-aritmetica.html">Tutorial 1.4: Aritmética</option>
+        <option value="./1-hablar/1.5-tarea1.html">Tutorial 1.5: Tarea 1</option>
+      </select>
+    </p>
+    <p>
+      <select name="tutorial2" id="tutorial2" onchange="location = this.value;">
+        <option value="">Tutorial 2</option>
+        <option value="./2-condicionales/2.1-logica.html">Tutorial 2.1: Lógica</option>
+        <option value="./2-condicionales/2.2-operacion_matematica.html">Tutorial 2.2: Operación Matemática</option>
+        <option value="./2-condicionales/2.3-propiedad_matematica.html">Tutorial 2.3: Propiedad Matemática</option>
+        <option value="./2-condicionales/2.4-puertas_logicas.html">Tutorial 2.4: Puertas Lógicas</option>
+        <option value="./2-condicionales/2.5-tarea2.html">Tutorial 2.5: Tarea 2</option>
+      </select>
+    </p>
+    <p>
+      <select name="tutorial3" id="tutorial3" onchange="location = this.value;">
+        <option value="">Tutorial 3</option>
+        <option value="./3-variables/3.1-asignar_texto.html">Tutorial 3.1: Asignar Texto</option>
+        <option value="./3-variables/3.2-asignar_numero.html">Tutorial 3.2: Asignar Número</option>
+        <option value="./3-variables/3.3-tarea3.html">Tutorial 3.3: Tarea 3</option>
+      </select>
+    </p>
+    <p>
+      <select name="tutorial4" id="tutorial4" onchange="location = this.value;">
+        <option value="">Tutorial 4</option>
+        <option value="./4-ciclos/4.1-texto.html">Tutorial 4.1: Texto</option>
+        <option value="./4-ciclos/4.2-contador.html">Tutorial 4.2: Contador</option>
+        <option value="./4-ciclos/4.3-tarea4.html">Tutorial 4.3: Tarea 4</option>
+      </select>
+    </p>
+  </body>
+  <script>
+    const ACCESSIBLE_GLOBALS = {
+      // Prefix of path to sound files.
+      mediaPathPrefix: '../../../accessible/media/',
+      // Additional buttons for the sidebar.
+      customSidebarButtons: []
+    };
+  </script>
+</html>
