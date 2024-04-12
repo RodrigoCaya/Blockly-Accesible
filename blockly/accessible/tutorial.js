@@ -45,7 +45,7 @@ tutorialBtn.onclick = function() {
   winIntructionsTutorial.document.close();
 }
 home.onclick = function() {
-  window.location.href = "../../index.html";
+  window.location.href = "../../../../../index.html";
 }
 selection.onclick = function() {
   window.location.href = "../seleccion_tutorial.html";

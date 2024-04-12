@@ -4,27 +4,27 @@
   <meta charset="utf-8">
   <title>Blockly Accesible</title>
 
-  <script src="../../accessible/libs/es6-shim.min.js"></script>
-  <script src="../../accessible/libs/angular2-polyfills.min.js"></script>
-  <script src="../../accessible/libs/Rx.umd.min.js"></script>
-  <script src="../../accessible/libs/angular2-all.umd.min.js"></script>
+  <script src="blockly/accessible/libs/es6-shim.min.js"></script>
+  <script src="blockly/accessible/libs/angular2-polyfills.min.js"></script>
+  <script src="blockly/accessible/libs/Rx.umd.min.js"></script>
+  <script src="blockly/accessible/libs/angular2-all.umd.min.js"></script>
 
   <!-- Load accessibleBlockly -->
   <!-- <script src="../../blockly_accessible_compressed.js"></script> -->
-  <script src="../../blockly_accessible_uncompressed.js"></script>
+  <script src="blockly/blockly_accessible_uncompressed.js"></script>
 
   <!-- Load Blockly -->
   <!-- <script src="../../msg/js/en.js"></script> -->
-  <script src="../../msg/js/es.js"></script>
+  <script src="blockly/msg/js/es.js"></script>
 
-  <script src="../../accessible/messages.js"></script>
-  <script src="../../blocks_compressed.js"></script>
-  <script src="../../javascript_compressed.js"></script>
-  <script src="../../python_compressed.js"></script>
+  <script src="blockly/accessible/messages.js"></script>
+  <script src="blockly/blocks_compressed.js"></script>
+  <script src="blockly/javascript_compressed.js"></script>
+  <script src="blockly/python_compressed.js"></script>
 
-  <script src="../../accessible/key-combination.js"></script>
+  <script src="blockly/accessible/key-combination.js"></script>
 
-  <link rel="stylesheet" href="../../accessible/media/accessible.css">
+  <link rel="stylesheet" href="blockly/accessible/media/accessible.css">
 </head>
 <body>
   <p style="font-size: 20px; font-weight: bold;">
@@ -52,17 +52,17 @@
   </p>
   <p>
     Si es su primera vez utilizando el programa, te recomiendo realizar el tutorial:
-    <button onclick="location.href='./tutorial/seleccion_tutorial.html'">Tutorial Blockly Accesible</button>
+    <button onclick="location.href='blockly/demos/accessible/tutorial/seleccion_tutorial.html'">Tutorial Blockly Accesible</button>
   </p>
   <p>
     Si tienes alguna duda o sugerencia puedes contactarme a través del siguiente botón:
-    <button onclick="location.href='./contacto.html'">Contáctame</button>
+    <button onclick="location.href='blockly/demos/accessible/contacto.html'">Contáctame</button>
   </p>
   <blockly-app></blockly-app>
   <script>
     const ACCESSIBLE_GLOBALS = {
       // Prefix of path to sound files.
-      mediaPathPrefix: '../../accessible/media/',
+      mediaPathPrefix: 'blockly/accessible/media/',
       // Additional buttons for the sidebar.
       customSidebarButtons: []
     };
