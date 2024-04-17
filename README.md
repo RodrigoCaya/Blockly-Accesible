@@ -14,4 +14,4 @@ Blockly Accesible utiliza la versión 2.20190722.0 de Blockly y la versión v201
 
 ## Modificaciones realizadas
 
-Se realizó un co-desarrollo en conjunto con personas con discapacidad visual del Instituto Antonio Vicente Mosquete, así lograr satisfacer sus necesidades y requerimientos.
+Se realizó un co-desarrollo en conjunto con ex-alumnos del Instituto Antonio Vicente Mosquete para personas con discapacidad visual y así lograr satisfacer sus necesidades y requerimientos.
